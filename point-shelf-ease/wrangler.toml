@@ -1,0 +1,19 @@
+name = "pos-backend-worker"
+compatibility_date = "2024-09-01"
+main = "./workers/index.js"
+
+# Environment variables
+[env.production.vars]
+NODE_ENV = "production"
+# Add your environment variables here
+# SUPABASE_URL = "your-supabase-url"
+# SUPABASE_ANON_KEY = "your-supabase-anon-key"
+# JWT_SECRET = "your-jwt-secret"
+
+[env.development.vars]
+NODE_ENV = "development"
+
+# Optional: Worker routes for custom domain
+# [[route]]
+# pattern = "api.yourdomain.com/*"
+# zone_name = "yourdomain.com"

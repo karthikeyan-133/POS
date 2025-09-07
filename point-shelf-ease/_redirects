@@ -1,0 +1,5 @@
+# SPA Redirect for React Router
+/*    /index.html   200
+
+# API Proxy (if using external API)
+/api/*  https://your-worker.your-subdomain.workers.dev/api/:splat  200

@@ -1,0 +1,13 @@
+{
+  "name": "pos-worker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.55.0",
+    "itty-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

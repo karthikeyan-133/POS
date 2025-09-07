@@ -1,0 +1,446 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Zepto-Inspired Fintech Theme */
+@layer base {
+  :root {
+    /* Primary Brand Colors - Vibrant Electric Blue */
+    --primary: 219 92% 58%; /* #2196F3 - Vibrant Electric Blue */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --primary-50: 210 100% 98%;
+    --primary-100: 210 100% 94%;
+    --primary-200: 210 92% 88%;
+    --primary-300: 210 84% 79%;
+    --primary-400: 213 76% 69%;
+    --primary-500: 219 92% 58%; /* Main primary */
+    --primary-600: 222 84% 50%;
+    --primary-700: 225 76% 42%;
+    --primary-800: 228 68% 34%;
+    --primary-900: 231 60% 28%;
+
+    /* Background Colors */
+    --background: 0 0% 100%; /* Pure White */
+    --foreground: 222 84% 5%; /* Deep Navy Text */
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 222 84% 5%; /* Dark text on cards */
+
+    /* Secondary - Cool Gray */
+    --secondary: 210 40% 98%; /* Very light cool gray */
+    --secondary-foreground: 222 84% 5%; /* Dark text */
+
+    /* Accent - Vibrant Emerald Green */
+    --accent: 122 39% 49%; /* #4CAF50 - Vibrant Emerald Green */
+    --accent-foreground: 0 0% 100%; /* White on accent */
+
+    /* Muted */
+    --muted: 210 40% 96%; /* Light cool gray */
+    --muted-foreground: 215 16% 47%; /* Mid gray */
+
+    /* Borders, Inputs, Rings */
+    --border: 214 32% 91%; /* Cool gray border */
+    --input: 214 32% 91%; /* Cool gray input border */
+    --ring: 219 92% 58%; /* Primary blue focus ring */
+
+    /* Status Colors */
+    --destructive: 0 84% 60%; /* Red */
+    --destructive-foreground: 0 0% 100%; /* White text */
+    --success: 122 39% 49%; /* Vibrant Green */
+    --warning: 45 100% 51%; /* Vibrant Yellow */
+    --info: 199 89% 48%; /* Info Blue */
+
+    /* Sidebar - Deep Navy with colorful accents */
+    --sidebar-background: 222 47% 11%; /* #1E293B - Deep Navy */
+    --sidebar-foreground: 210 40% 98%; /* Light text */
+    --sidebar-primary: 219 92% 58%; /* Vibrant Electric Blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 262 83% 58%; /* Vibrant Purple */
+    --sidebar-accent-foreground: 0 0% 100%; /* White text */
+    --sidebar-border: 215 28% 17%; /* Dark border */
+    --sidebar-ring: 219 92% 58%; /* Blue focus ring */
+
+    /* Popover */
+    --popover: 0 0% 100%; /* White popover */
+    --popover-foreground: 222 84% 5%; /* Dark text */
+
+    /* Radius */
+    --radius: 0.5rem; /* 8px border radius - Modern & Clean */
+
+    /* Enhanced Shadows - Fintech Style */
+    --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(15 23 42 / 0.1), 0 1px 2px -1px rgb(15 23 42 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1);
+    --shadow-card: 0 2px 8px 0 rgb(15 23 42 / 0.08);
+
+    /* Vibrant Gradients */
+    --gradient-primary: linear-gradient(135deg, #2196F3, #9C27B0);
+    --gradient-accent: linear-gradient(135deg, #4CAF50, #22C55E);
+    --gradient-subtle: linear-gradient(180deg, rgba(33,150,243,0.05), rgba(156,39,176,0.05));
+    --gradient-hero: linear-gradient(135deg, #2196F3 0%, #9C27B0 50%, #E91E63 100%);
+    --gradient-vibrant: linear-gradient(135deg, #FF9800, #F44336, #9C27B0);
+    --gradient-warm: linear-gradient(135deg, #FF9800, #F44336);
+    --gradient-cool: linear-gradient(135deg, #2196F3, #009688);
+  }
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-optical-sizing: auto;
+    font-variation-settings: normal;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  h1 { font-size: 2.25rem; font-weight: 700; }
+  h2 { font-size: 1.875rem; font-weight: 600; }
+  h3 { font-size: 1.5rem; font-weight: 600; }
+  h4 { font-size: 1.25rem; font-weight: 600; }
+  h5 { font-size: 1.125rem; font-weight: 600; }
+  h6 { font-size: 1rem; font-weight: 600; }
+}
+
+
+  /* Dark mode theme - Zepto Dark */
+  .dark {
+    --background: 222 47% 11%; /* Deep Navy */
+    --foreground: 210 40% 98%; /* Light text */
+    --card: 222 47% 11%; /* Dark navy cards */
+    --card-foreground: 210 40% 98%; /* Light text */
+    --popover: 222 47% 11%; /* Dark popover */
+    --popover-foreground: 210 40% 98%; /* Light text */
+    --primary: 219 92% 58%; /* Electric Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 215 28% 17%; /* Darker navy */
+    --secondary-foreground: 210 40% 98%; /* Light text */
+    --muted: 215 28% 17%; /* Dark muted */
+    --muted-foreground: 217 19% 35%; /* Muted text */
+    --accent: 122 39% 49%; /* Success green */
+    --accent-foreground: 0 0% 100%; /* White */
+    --destructive: 0 84% 60%; /* Red */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 215 28% 17%; /* Dark border */
+    --input: 215 28% 17%; /* Dark input */
+    --ring: 219 92% 58%; /* Blue focus ring */
+    --sidebar-background: 222 47% 11%; /* Deep navy */
+    --sidebar-foreground: 210 40% 98%; /* Light text */
+    --sidebar-primary: 219 92% 58%; /* Electric blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 262 83% 58%; /* Vibrant purple */
+    --sidebar-accent-foreground: 0 0% 100%; /* White */
+    --sidebar-border: 215 28% 17%; /* Dark border */
+    --sidebar-ring: 219 92% 58%; /* Blue focus */
+  }
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-optical-sizing: auto;
+    font-variation-settings: normal;
+    line-height: 1.5;
+  }
+
+  /* Typography - Modern Fintech */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    color: hsl(var(--foreground));
+  }
+
+  h1 { font-size: 2.5rem; font-weight: 700; color: hsl(var(--foreground)); }
+  h2 { font-size: 2rem; font-weight: 600; color: hsl(var(--foreground)); }
+  h3 { font-size: 1.75rem; font-weight: 600; color: hsl(var(--foreground)); }
+  h4 { font-size: 1.5rem; font-weight: 600; color: hsl(var(--foreground)); }
+  h5 { font-size: 1.25rem; font-weight: 600; color: hsl(var(--foreground)); }
+  h6 { font-size: 1.125rem; font-weight: 600; color: hsl(var(--foreground)); }
+
+  p {
+    line-height: 1.7;
+    color: hsl(var(--muted-foreground));
+  }
+}
+
+/* Zepto Component Styles */
+@layer components {
+  .card-fintech {
+    @apply bg-card border border-border rounded-lg shadow-card hover:shadow-lg transition-all duration-300;
+    backdrop-filter: blur(16px);
+  }
+
+  .btn-primary {
+    @apply text-white font-medium px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+    background: hsl(var(--primary));
+  }
+
+  .btn-primary:hover {
+    background: hsl(var(--primary) / 0.9);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground border border-border font-medium px-6 py-3 rounded-lg hover:bg-secondary/80 transition-all duration-200;
+  }
+
+  .btn-success {
+    @apply text-white font-medium px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200;
+    background: hsl(var(--accent));
+  }
+
+  .btn-success:hover {
+    background: hsl(var(--accent) / 0.9);
+  }
+
+  .input-fintech {
+    @apply border bg-background px-4 py-3 text-sm rounded-lg placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
+    border-color: hsl(var(--input));
+  }
+
+  .input-fintech:focus {
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200;
+  }
+
+  .sidebar-item:hover {
+    background: hsl(var(--sidebar-accent) / 0.1);
+  }
+
+  .sidebar-item.active {
+    background: hsl(var(--sidebar-accent));
+    color: hsl(var(--sidebar-accent-foreground));
+  }
+
+  .gradient-text {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+  }
+}
+
+/* Modern Animations */
+@layer utilities {
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.8);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.4s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .hover-lift {
+    transition: transform 0.2s ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Enhanced Scrollbar and Selection */
+@layer base {
+  /* Modern scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+
+  /* Selection styling */
+  ::selection {
+    background: hsl(var(--primary) / 0.2);
+    color: hsl(var(--foreground));
+  }
+
+  /* Focus visible for accessibility */
+  .focus-visible\:ring-2:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Loading states */
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted) / 0.5) 50%, hsl(var(--muted)) 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+/* Fintech Status Indicators */
+@layer components {
+  .status-success {
+    @apply bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-warning {
+    @apply bg-yellow-50 text-yellow-700 border border-yellow-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-error {
+    @apply bg-red-50 text-red-700 border border-red-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-info {
+    @apply bg-blue-50 text-blue-700 border border-blue-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .dark .status-success {
+    @apply bg-green-900/20 text-green-400 border-green-800;
+  }
+
+  .dark .status-warning {
+    @apply bg-yellow-900/20 text-yellow-400 border-yellow-800;
+  }
+
+  .dark .status-error {
+    @apply bg-red-900/20 text-red-400 border-red-800;
+  }
+
+  .dark .status-info {
+    @apply bg-blue-900/20 text-blue-400 border-blue-800;
+  }
+}
+
+/* Vibrant Gradient Utilities */
+@layer utilities {
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #2196F3, #9C27B0);
+  }
+  
+  .bg-gradient-accent {
+    background: linear-gradient(135deg, #4CAF50, #22C55E);
+  }
+  
+  .bg-gradient-subtle {
+    background: linear-gradient(180deg, rgba(33,150,243,0.05), rgba(156,39,176,0.05));
+  }
+  
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, #2196F3 0%, #9C27B0 50%, #E91E63 100%);
+  }
+  
+  .bg-gradient-vibrant {
+    background: linear-gradient(135deg, #FF9800, #F44336, #9C27B0);
+  }
+  
+  .bg-gradient-warm {
+    background: linear-gradient(135deg, #FF9800, #F44336);
+  }
+  
+  .bg-gradient-cool {
+    background: linear-gradient(135deg, #2196F3, #009688);
+  }
+  
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #2196F3, #9C27B0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-warm {
+    background: linear-gradient(135deg, #FF9800, #F44336);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-cool {
+    background: linear-gradient(135deg, #2196F3, #009688);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
