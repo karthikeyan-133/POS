@@ -1,0 +1,28 @@
+{
+  "name": "pos-app-workspace",
+  "version": "1.0.0",
+  "description": "POS Application Workspace",
+  "scripts": {
+    "install:app": "cd point-shelf-ease && npm install && cd backend && npm install",
+    "build:app": "cd point-shelf-ease && npm run build",
+    "start:backend": "cd point-shelf-ease/backend && npm start",
+    "dev:app": "cd point-shelf-ease && npm run dev",
+    "dev:backend": "cd point-shelf-ease/backend && npm run dev"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.56.1",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "google-auth-library": "^10.3.0",
+    "googleapis": "^159.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "pg": "^8.16.3"
+  }
+}
